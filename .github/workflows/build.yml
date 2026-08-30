@@ -54,6 +54,7 @@ jobs:
 
       - name: Build roothide package
         run: |
+          cd DazyNotDisturb
           make clean
           make package THEOS_PACKAGE_SCHEME=roothide FINALPACKAGE=1
           ls -la packages
