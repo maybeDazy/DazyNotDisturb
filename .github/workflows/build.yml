@@ -63,4 +63,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: DazyNotDisturb-roothide-deb
-          path: packages/*.deb
+          path: DazyNotDisturb/packages/*.deb
