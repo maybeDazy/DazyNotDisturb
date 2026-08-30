@@ -1,4 +1,5 @@
 #import <UIKit/UIKit.h>
+#import <Preferences/PSListController.h>
 
-@interface DNBAppListController : PSViewController
+@interface DNBAppListController : PSListController
 @end
