@@ -7,6 +7,7 @@
 @implementation DNBAppListController {
     NSMutableArray<NSString *> *_allBundleIDs;
     NSArray<NSString *> *_selectedBundleIDs;
+    NSArray *_specifiers;
     BOOL _loaded;
 }
 
