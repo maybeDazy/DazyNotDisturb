@@ -43,7 +43,7 @@ static NSDictionary *snapshotBulletin(BBBulletin *b) {
 - (void)publishBulletin:(BBBulletin *)bulletin destinations:(unsigned long long)destinations {
     if (isEnabled() && appIsTarget(bulletin.sectionID)) {
         if (!storedBulletinSnapshots) storedBulletinSnapshots = [NSMutableArray new];
-        NSDictionary *snap = snapshotBulletin(b);
+        NSDictionary *snap = snapshotBulletin(bulletin);
         if (snap) [storedBulletinSnapshots addObject:snap];
 
         if ([dndDefaults boolForKey:kTgEnabled]) {
