@@ -9,7 +9,7 @@ DazyNotDisturbPrefs_FILES = DNBRootListController.m DNBAppListController.m
 DazyNotDisturbPrefs_INSTALL_PATH = /Library/PreferenceBundles
 DazyNotDisturbPrefs_FRAMEWORKS = UIKit Foundation
 DazyNotDisturbPrefs_PRIVATE_FRAMEWORKS = Preferences
-DazyNotDisturbPrefs_RESOURCE_FILES = Info.plist Root.plist icon.png
+DazyNotDisturbPrefs_RESOURCE_FILES = Info.plist Root.plist icon.png TargetApps.plist
 DazyNotDisturbPrefs_CFLAGS = -fobjc-arc
 
 include $(THEOS_MAKE_PATH)/bundle.mk

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>title</key>
+    <string>대상 앱 선택</string>
+    <key>items</key>
+    <array>
+        <dict>
+            <key>cell</key>
+            <string>PSGroupCell</string>
+            <key>footerText</key>
+            <string>체크한 앱의 알림이 가로채져 텔레그램으로 전달됩니다. 아무것도 선택하지 않으면 모든 앱의 알림이 가로채집니다.</string>
+        </dict>
+        <dict>
+            <key>cell</key>
+            <string>PSSwitchCell</string>
+            <key>label</key>
+            <string>KakaoTalk</string>
+            <key>key</key>
+            <string>App_com.kakao.talk</string>
+            <key>defaults</key>
+            <string>Disturb.Dazy.Pro</string>
+            <key>default</key>
+            <true/>
+        </dict>
+        <dict>
+            <key>cell</key>
+            <string>PSSwitchCell</string>
+            <key>label</key>
+            <string>Line</string>
+            <key>key</key>
+            <string>App_net.linecorp.Line</string>
+            <key>defaults</key>
+            <string>Disturb.Dazy.Pro</string>
+            <key>default</key>
+            <true/>
+        </dict>
+        <dict>
+            <key>cell</key>
+            <string>PSSwitchCell</string>
+            <key>label</key>
+            <string>WhatsApp</string>
+            <key>key</key>
+            <string>App_net.whatsapp.WhatsApp</string>
+            <key>defaults</key>
+            <string>Disturb.Dazy.Pro</string>
+            <key>default</key>
+            <true/>
+        </dict>
+        <dict>
+            <key>cell</key>
+            <string>PSSwitchCell</string>
+            <key>label</key>
+            <string>Telegram</string>
+            <key>key</key>
+            <string>App_ph.telegra.Telegraph</string>
+            <key>defaults</key>
+            <string>Disturb.Dazy.Pro</string>
+            <key>default</key>
+            <true/>
+        </dict>
+        <dict>
+            <key>cell</key>
+            <string>PSSwitchCell</string>
+            <key>label</key>
+            <string>Messenger</string>
+            <key>key</key>
+            <string>App_com.facebook.Messenger</string>
+            <key>defaults</key>
+            <string>Disturb.Dazy.Pro</string>
+            <key>default</key>
+            <true/>
+        </dict>
+        <dict>
+            <key>cell</key>
+            <string>PSSwitchCell</string>
+            <key>label</key>
+            <string>Instagram DM</string>
+            <key>key</key>
+            <string>App_com.burbn.instagram</string>
+            <key>defaults</key>
+            <string>Disturb.Dazy.Pro</string>
+            <key>default</key>
+            <true/>
+        </dict>
+        <dict>
+            <key>cell</key>
+            <string>PSSwitchCell</string>
+            <key>label</key>
+            <string>Gmail</string>
+            <key>key</key>
+            <string>App_com.google.Gmail</string>
+            <key>defaults</key>
+            <string>Disturb.Dazy.Pro</string>
+            <key>default</key>
+            <true/>
+        </dict>
+        <dict>
+            <key>cell</key>
+            <string>PSGroupCell</string>
+            <key>footerText</key>
+            <string>위 앱들은 예시입니다. 추가 앱의 bundle ID는 NSUserDefaults 키 'DND_SelectedApps' (배열, 예: com.apple.mobilemail)에 직접 등록하거나 아래 '전체 앱 모드'를 끄고 사용하세요.</string>
+        </dict>
+    </array>
+</dict>
+</plist>

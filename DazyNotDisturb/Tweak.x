@@ -9,20 +9,12 @@ static NSUserDefaults *dndDefaults;
 
 #define kSuite @"Disturb.Dazy.Pro"
 #define kEnabled @"DND_Enabled"
-#define kSelectedApps @"DND_SelectedApps"
 #define kTgEnabled @"Telegram_Enabled"
 #define kTgToken @"Telegram_BotToken"
 #define kTgChat @"Telegram_ChatID"
 
 static BOOL isEnabled() {
     return [dndDefaults boolForKey:kEnabled];
-}
-
-static BOOL appIsTarget(NSString *bundleID) {
-    if (bundleID.length == 0) return NO;
-    NSArray *selected = [dndDefaults arrayForKey:kSelectedApps];
-    if (!selected || selected.count == 0) return YES;
-    return [selected containsObject:bundleID];
 }
 
 static NSDictionary *snapshotBulletin(BBBulletin *b) {
@@ -41,13 +33,14 @@ static NSDictionary *snapshotBulletin(BBBulletin *b) {
 %hook BBServer
 
 - (void)publishBulletin:(BBBulletin *)bulletin destinations:(unsigned long long)destinations {
-    if (isEnabled() && appIsTarget(bulletin.sectionID)) {
-        if (!storedBulletinSnapshots) storedBulletinSnapshots = [NSMutableArray new];
+    if (isEnabled() && bulletin) {
         NSDictionary *snap = snapshotBulletin(bulletin);
-        if (snap) [storedBulletinSnapshots addObject:snap];
-
+        if (snap) {
+            if (!storedBulletinSnapshots) storedBulletinSnapshots = [NSMutableArray new];
+            [storedBulletinSnapshots addObject:snap];
+        }
         if ([dndDefaults boolForKey:kTgEnabled]) {
-            NSString *text = [NSString stringWithFormat:@"[숨김 알림]\n앱: %@\n제목: %@\n내용: %@",
+            NSString *text = [NSString stringWithFormat:@"[방해금지]\n앱: %@\n제목: %@\n내용: %@",
                                snap[@"sectionID"] ?: @"",
                                snap[@"title"]     ?: @"",
                                snap[@"message"]   ?: @""];
@@ -55,16 +48,7 @@ static NSDictionary *snapshotBulletin(BBBulletin *b) {
                                   token:[dndDefaults stringForKey:kTgToken]
                                  chatID:[dndDefaults stringForKey:kTgChat]];
         }
-        return;
     }
-    %orig;
-}
-
-%end
-
-%hook SBBulletinBannerController
-
-- (void)deactivateBulletinAnimated:(BOOL)animated {
     %orig;
 }
 
@@ -72,11 +56,5 @@ static NSDictionary *snapshotBulletin(BBBulletin *b) {
 
 %ctor {
     dndDefaults = [[NSUserDefaults alloc] initWithSuiteName:kSuite];
-
-    CFNotificationCenterAddObserver(CFNotificationCenterGetDarwinNotifyCenter(),
-        NULL, NULL,
-        CFSTR("Disturb.Dazy.Pro/toggle"), NULL,
-        CFNotificationSuspensionBehaviorDeliverImmediately);
-
     NSLog(@"[DazyNotDisturb] loaded, enabled=%d", isEnabled());
 }
