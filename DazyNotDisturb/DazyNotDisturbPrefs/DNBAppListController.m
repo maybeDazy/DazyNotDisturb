@@ -1,18 +1,8 @@
 #import "DNBAppListController.h"
 #import <Preferences/PSSpecifier.h>
 #import <Preferences/PSListController.h>
-#import <CoreServices/CoreServices.h>
+#import <MobileCoreServices/MobileCoreServices.h>
 #import <MobileCoreServices/LSApplicationProxy.h>
-
-@interface LSApplicationWorkspace : NSObject
-+ (instancetype)defaultWorkspace;
-- (NSArray *)allInstalledApplications;
-@end
-
-@interface LSApplicationProxy (AppList)
-- (NSString *)bundleIdentifier;
-- (NSString *)localizedName;
-@end
 
 @implementation DNBAppListController {
     NSMutableArray<NSString *> *_allBundleIDs;
@@ -113,11 +103,11 @@
 
     PSSpecifier *headerGroup = [PSSpecifier preferenceSpecifierNamed:@""
                                                                 target:self
-                                                                   set:NULL
-                                                                   get:NULL
-                                                                detail:Nil
+                                                                   set:nil
+                                                                   get:nil
+                                                                detail:nil
                                                                  cell:PSGroupCell
-                                                                 edit:Nil];
+                                                                 edit:nil];
     [headerGroup setProperty:@"설치된 앱 목록입니다. 끄면 방해금지 모드와 무관하게 알림이 정상 표시됩니다." forKey:@"footerText"];
     [specs addObject:headerGroup];
 
