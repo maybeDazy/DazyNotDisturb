@@ -1,0 +1,3 @@
+#!/bin/sh
+# Refresh PreferenceLoader / CCSupport caches after install
+exit 0

@@ -1,0 +1,9 @@
+Package: com.dazy.notdisturb.prefs
+Name: DazyNotDisturbPrefs
+Version: 1.2.0
+Architecture: iphoneos-arm
+Description: Preference bundle for DazyNotDisturb
+Maintainer: dazy
+Author: dazy
+Section: PreferenceBundles
+Depends: preferenceloader

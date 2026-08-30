@@ -1,0 +1,9 @@
+Package: com.dazy.notdisturb.ccmodule
+Name: DazyNotDisturbCCModule
+Version: 1.2.0
+Architecture: iphoneos-arm
+Description: Control Center module for DazyNotDisturb
+Maintainer: dazy
+Author: dazy
+Section: ControlCenter
+Depends: com.opa334.ccsupport (>= 1.3.13), mobilesubstrate, firmware (>= 16.0), disturb.dazy.pro

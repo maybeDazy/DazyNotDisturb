@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>title</key>
+    <string>DazyNotDisturb</string>
+    <key>items</key>
+    <array>
+        <dict>
+            <key>cell</key>
+            <string>PSGroupCell</string>
+            <key>label</key>
+            <string>알림 가로채기</string>
+            <key>footerText</key>
+            <string>방해금지 모드를 켜면 알림이 숨겨지고 텔레그램으로 전달됩니다.</string>
+        </dict>
+        <dict>
+            <key>cell</key>
+            <string>PSSwitchCell</string>
+            <key>label</key>
+            <string>방해금지 모드</string>
+            <key>key</key>
+            <string>DND_Enabled</string>
+            <key>defaults</key>
+            <string>Disturb.Dazy.Pro</string>
+            <key>default</key>
+            <false/>
+        </dict>
+        <dict>
+            <key>cell</key>
+            <string>PSLinkCell</string>
+            <key>label</key>
+            <string>대상 앱 선택</string>
+            <key>detail</key>
+            <string>DNBAppListController</string>
+        </dict>
+        <dict>
+            <key>cell</key>
+            <string>PSGroupCell</string>
+            <key>label</key>
+            <string>텔레그램 연동</string>
+            <key>footerText</key>
+            <string>숨긴 알림을 텔레그램 봇으로 전달합니다.</string>
+        </dict>
+        <dict>
+            <key>cell</key>
+            <string>PSSwitchCell</string>
+            <key>label</key>
+            <string>텔레그램 전달</string>
+            <key>key</key>
+            <string>Telegram_Enabled</string>
+            <key>defaults</key>
+            <string>Disturb.Dazy.Pro</string>
+            <key>default</key>
+            <false/>
+        </dict>
+        <dict>
+            <key>cell</key>
+            <string>PSEditTextCell</string>
+            <key>label</key>
+            <string>Bot Token</string>
+            <key>key</key>
+            <string>Telegram_BotToken</string>
+            <key>defaults</key>
+            <string>Disturb.Dazy.Pro</string>
+            <key>placeholder</key>
+            <string>123456789:AAG...</string>
+        </dict>
+        <dict>
+            <key>cell</key>
+            <string>PSEditTextCell</string>
+            <key>label</key>
+            <string>Chat ID</string>
+            <key>key</key>
+            <string>Telegram_ChatID</string>
+            <key>defaults</key>
+            <string>Disturb.Dazy.Pro</string>
+            <key>placeholder</key>
+            <string>123456789</string>
+        </dict>
+    </array>
+</dict>
+</plist>

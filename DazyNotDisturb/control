@@ -1,0 +1,9 @@
+Package: disturb.dazy.pro
+Name: DazyNotDisturb
+Version: 1.2.0
+Architecture: iphoneos-arm
+Description: 방해금지 모드로 알림을 가로채 텔레그램으로 전달
+Maintainer: dazy
+Author: dazy
+Section: Tweaks
+Depends: firmware (>= 16.0), mobilesubstrate, com.opa334.ccsupport (>= 1.3.13), preferenceloader (>= 2.2.6)
