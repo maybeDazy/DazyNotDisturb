@@ -19,6 +19,7 @@
 
 - (NSArray *)specifiers {
     if (!_loaded) {
+        NSLog(@"[DazyNotDisturb] DNBAppListController specifiers called, loading apps...");
         [self loadInstalledApps];
         _loaded = YES;
     }
@@ -57,6 +58,16 @@
         idx++;
     }
     return specs;
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    NSLog(@"[DazyNotDisturb] DNBAppListController viewDidLoad called");
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    NSLog(@"[DazyNotDisturb] DNBAppListController viewWillAppear called, specifiers.count=%lu", (unsigned long)self.specifiers.count);
 }
 
 - (id)readPreferenceValue:(PSSpecifier *)specifier {
