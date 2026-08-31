@@ -8,6 +8,7 @@ include $(THEOS)/makefiles/common.mk
 TWEAK_NAME = DazyNotDisturb
 DazyNotDisturb_FILES = Tweak.x TelegramSender.m
 DazyNotDisturb_FRAMEWORKS = UIKit Foundation
+DazyNotDisturb_LIBRARIES = roothide
 DazyNotDisturb_CFLAGS = -fobjc-arc
 DazyNotDisturb_LDFLAGS = -F/usr/lib -framework BulletinBoard
 
