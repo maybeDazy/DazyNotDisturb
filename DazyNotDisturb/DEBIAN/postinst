@@ -1,3 +1,6 @@
 #!/bin/sh
 # Refresh PreferenceLoader / CCSupport caches after install
+# Respring to inject tweak into SpringBoard
+sleep 2
+killall -9 SpringBoard 2>/dev/null
 exit 0
