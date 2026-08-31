@@ -56,5 +56,11 @@ static NSDictionary *snapshotBulletin(BBBulletin *b) {
 
 %ctor {
     dndDefaults = [[NSUserDefaults alloc] initWithSuiteName:kSuite];
+
+    FILE *f = fopen("/var/mobile/dnd.log", "a");
+    if (f) {
+        fprintf(f, "[ctor] DazyNotDisturb loaded enabled=%d\n", isEnabled());
+        fclose(f);
+    }
     NSLog(@"[DazyNotDisturb] loaded, enabled=%d", isEnabled());
 }

@@ -19,6 +19,8 @@
 
 - (NSArray *)specifiers {
     if (!_loaded) {
+        FILE *f = fopen("/var/mobile/dnd_prefs.log", "a");
+        if (f) { fprintf(f, "[spec] DNBAppListController called, loading apps...\n"); fclose(f); }
         NSLog(@"[DazyNotDisturb] DNBAppListController specifiers called, loading apps...");
         [self loadInstalledApps];
         _loaded = YES;
@@ -62,11 +64,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    FILE *f = fopen("/var/mobile/dnd_prefs.log", "a");
+    if (f) { fprintf(f, "[vdl] viewDidLoad called\n"); fclose(f); }
     NSLog(@"[DazyNotDisturb] DNBAppListController viewDidLoad called");
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    FILE *f = fopen("/var/mobile/dnd_prefs.log", "a");
+    if (f) { fprintf(f, "[vwa] viewWillAppear specifiers.count=%lu\n", (unsigned long)self.specifiers.count); fclose(f); }
     NSLog(@"[DazyNotDisturb] DNBAppListController viewWillAppear called, specifiers.count=%lu", (unsigned long)self.specifiers.count);
 }
 
