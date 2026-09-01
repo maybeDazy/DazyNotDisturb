@@ -1,6 +1,6 @@
 Package: disturb.dazy.pro
 Name: DazyNotDisturb
-Version: 1.2.0
+Version: 1.2.1
 Architecture: iphoneos-arm
 Description: 방해금지 모드로 알림을 가로채 텔레그램으로 전달
 Maintainer: dazy
