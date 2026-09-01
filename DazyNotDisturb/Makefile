@@ -11,7 +11,7 @@ DazyNotDisturb_FRAMEWORKS = UIKit Foundation
 DazyNotDisturb_LIBRARIES = roothide
 DazyNotDisturb_CFLAGS = -fobjc-arc
 DazyNotDisturb_LDFLAGS = -F/usr/lib -framework BulletinBoard
-DazyNotDisturb_CODESIGN_FLAGS = -Sentitlements.xml
+DazyNotDisturb_CODESIGN_FLAGS = -Sentitlements_empty.xml
 
 PACKAGE_SCRIPTS = DEBIAN
 
