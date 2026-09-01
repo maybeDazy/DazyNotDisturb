@@ -1,6 +1,6 @@
 export THEOS_PACKAGE_SCHEME = roothide
 ARCHS = arm64 arm64e
-TARGET = iphone:clang:16.0:16.5
+TARGET = iphone:clang:latest:16.5
 INSTALL_TARGET_PROCESSES = SpringBoard Preferences
 
 include $(THEOS)/makefiles/common.mk
