@@ -1,6 +1,6 @@
 export THEOS_PACKAGE_SCHEME = roothide
 ARCHS = arm64 arm64e
-TARGET = iphone:clang:16.0:14.0
+TARGET = iphone:clang:16.0:16.5
 
 include $(THEOS)/makefiles/common.mk
 
