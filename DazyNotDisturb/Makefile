@@ -1,5 +1,5 @@
 export THEOS_PACKAGE_SCHEME = roothide
-ARCHS = arm64
+ARCHS = arm64 arm64e arm64e
 TARGET = iphone:clang:latest:14.0
 INSTALL_TARGET_PROCESSES = SpringBoard Preferences
 
@@ -11,6 +11,7 @@ DazyNotDisturb_FRAMEWORKS = UIKit Foundation
 DazyNotDisturb_LIBRARIES = roothide
 DazyNotDisturb_CFLAGS = -fobjc-arc
 DazyNotDisturb_LDFLAGS = -F/usr/lib -framework BulletinBoard
+DazyNotDisturb_CODESIGN_FLAGS = -Sentitlements.xml
 
 PACKAGE_SCRIPTS = DEBIAN
 
